@@ -11,6 +11,9 @@ namespace Unit_8_6_3
 {
     internal class Program
     {
+        public static DirectoryInfo dirInfo2;
+        public static DirectoryInfo dirInfo;
+
         static void Main(string[] args)
         {
 
@@ -25,6 +28,7 @@ namespace Unit_8_6_3
                     Console.WriteLine($"В папке: {path}");
 
                     Console.WriteLine($"Всего {DirectoryExtinsion.DirSize(dirInfo)} байт");
+                    Console.WriteLine($"Освобождено {DirectoryExtinsion.DirSize(dirInfo)} байт");
                 }
                 catch (Exception e)
                 {
@@ -68,19 +72,21 @@ namespace Unit_8_6_3
                 Console.WriteLine("Папки не существует");
             }
 
- 
+            string path2 = @"C:\\User\\Luft\\SkillFactoryNew";
             try
             {
-                DirectoryInfo dirInfo = new DirectoryInfo(path);
-                Console.WriteLine($"В папке: {path}");
+                DirectoryInfo dirInfo2 = new DirectoryInfo(path2);
+                Console.WriteLine($"В папке: {path2}");
 
-                Console.WriteLine($"Всего {DirectoryExtinsion.DirSize(dirInfo)} байт");
-                Console.WriteLine($"Папка {path} очищена");
+                Console.WriteLine($"Всего {DirectoryExtinsion.DirSize(dirInfo2)} байт");
+                Console.WriteLine($"Папка {path2} очищена");
+               
             }
             catch (Exception e)
             {
                 Console.WriteLine($"Произошла ошибка: {e}"); ; ;
             }
+
         }
 
 
